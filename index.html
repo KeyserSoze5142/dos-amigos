@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Flooring Company — Northport, AL</title>
+    <meta name="description" content="True Flooring Company — Expert flooring installation in Northport and Tuscaloosa, AL. Hardwood, LVP, tile, carpet & more. Free in-home estimates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ================================================
+           CSS VARIABLES & RESET
+        ================================================ */
+        :root {
+            --navy:       #1a2847;
+            --navy-dark:  #111d36;
+            --navy-mid:   #243459;
+            --gold:       #c8943a;
+            --gold-light: #dba84e;
+            --gold-pale:  #f0d89a;
+            --brown:      #8b5e3c;
+            --cream:      #f7f3ec;
+            --cream-dark: #ede7d9;
+            --white:      #ffffff;
+            --charcoal:   #2c2c2c;
+            --gray:       #6b6b6b;
+            --light-gray: #e8e4dd;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'Raleway', sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--charcoal); background: var(--white); overflow-x: hidden; line-height: 1.7; }
+        h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.2; }
+        h1 { font-size: clamp(2.4rem, 6vw, 5rem); }
+        h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+        p  { font-size: 1rem; color: var(--gray); line-height: 1.85; }
+        img { display: block; max-width: 100%; }
+
+        /* ================================================
+           LAYOUT
+        ================================================ */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .section-pad { padding: 100px 0; }
+
+        .eyebrow {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        .gold-rule {
+            width: 56px; height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin: 14px 0 22px;
+        }
+        .gold-rule.center { margin-left: auto; margin-right: auto; }
+
+        /* ================================================
+           BUTTONS
+        ================================================ */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.28s ease;
+        }
+        .btn-gold   { background: var(--gold); color: #fff; }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,148,58,.35); }
+        .btn-navy   { background: var(--navy); color: #fff; }
+        .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,40,71,.3); }
+        .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.75); }
+        .btn-outline-white:hover { background: #fff; color: var(--navy); }
+        .btn-outline-gold  { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+        .btn-outline-gold:hover  { background: var(--gold); color: #fff; }
+
+        /* ================================================
+           NAV
+        ================================================ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 22px 0;
+            transition: all .4s ease;
+        }
+        .nav.scrolled {
+            background: var(--navy-dark);
+            padding: 14px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,.25);
+        }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1200px; margin: 0 auto; padding: 0 40px;
+        }
+        .nav-brand { cursor: pointer; text-decoration: none; }
+        .nav-brand-name { font-family: var(--font-display); font-size: 1.25rem; color: #fff; font-weight: 700; display: block; line-height: 1.1; }
+        .nav-brand-sub  { font-size: 0.6rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light); }
+        .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+        .nav-links a {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+            color: rgba(255,255,255,.8); text-decoration: none; cursor: pointer; transition: color .2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+        .nav-cta { padding: 10px 22px; font-size: 0.72rem; }
+
+        /* hamburger */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { display: block; width: 26px; height: 2px; background: #fff; transition: .3s; }
+
+        /* mobile menu */
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: var(--navy-dark);
+            z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: var(--font-display); font-size: 1.9rem; color: #fff;
+            text-decoration: none; cursor: pointer; transition: color .2s;
+        }
+        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-close { position: absolute; top: 24px; right: 36px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+        /* ================================================
+           PAGE SYSTEM
+        ================================================ */
+        .page { display: none; min-height: 100vh; animation: pageFade .38s ease; }
+        .page.active { display: block; }
+        @keyframes pageFade { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+
+        /* ================================================
+           HERO
+        ================================================ */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden;
+            background: var(--navy-dark);
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(135deg, rgba(17,29,54,.96) 0%, rgba(17,29,54,.82) 50%, rgba(139,94,60,.45) 100%),
+                url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1600&q=80') center/cover no-repeat;
+        }
+        /* subtle diagonal wood lines */
+        .hero-bg::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: repeating-linear-gradient(
+                93deg, transparent, transparent 48px,
+                rgba(200,148,58,.04) 48px, rgba(200,148,58,.04) 49px
+            );
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 700px;
+            padding: 130px 40px 70px;
+            margin-left: max(40px, calc((100vw - 1200px) / 2));
+        }
+        .hero-eyebrow {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+        }
+        .hero-eyebrow-line { width: 38px; height: 1px; background: var(--gold); }
+        .hero-eyebrow-text { font-size: 0.7rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-light); }
+        .hero h1 { color: #fff; font-weight: 700; margin-bottom: 22px; }
+        .hero h1 em { font-style: italic; color: var(--gold-light); }
+        .hero-desc { font-size: 1.1rem; color: rgba(255,255,255,.72); margin-bottom: 40px; max-width: 500px; font-weight: 300; }
+        .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-scroll-hint {
+            position: absolute; bottom: 38px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            color: rgba(255,255,255,.35); font-size: 0.65rem; letter-spacing: .15em; text-transform: uppercase;
+            animation: nudge 2.5s infinite ease-in-out;
+        }
+        .hero-scroll-hint::after {
+            content:''; display:block; width:1px; height:36px;
+            background: linear-gradient(to bottom, rgba(255,255,255,.35), transparent);
+        }
+        @keyframes nudge {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(7px); }
+        }
+
+        /* ================================================
+           SERVICE CARDS (HOME)
+        ================================================ */
+        .services-preview { padding: 90px 0 0; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-header h2 { margin-bottom: 0; }
+
+        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+        .svc-card {
+            position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer;
+        }
+        .svc-card-bg {
+            position: absolute; inset: 0; background-size: cover; background-position: center;
+            transition: transform .6s ease;
+        }
+        .svc-card:hover .svc-card-bg { transform: scale(1.07); }
+        .svc-card-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(17,29,54,.9) 0%, rgba(17,29,54,.2) 55%, transparent 100%);
+            transition: background .3s;
+        }
+        .svc-card:hover .svc-card-overlay { background: linear-gradient(to top, rgba(17,29,54,.95) 0%, rgba(17,29,54,.5) 60%, rgba(17,29,54,.1) 100%); }
+        .svc-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 30px; }
+        .svc-card-content h3 { color: #fff; font-size: 1.3rem; margin-bottom: 6px; }
+        .svc-card-content p {
+            color: rgba(255,255,255,.72); font-size: 0.84rem; margin: 0;
+            max-height: 0; overflow: hidden; transition: max-height .4s ease;
+        }
+        .svc-card:hover .svc-card-content p { max-height: 72px; }
+        .svc-card-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--gold-light); font-size: 0.72rem; font-weight: 700;
+            letter-spacing: .1em; text-transform: uppercase; margin-top: 10px;
+            transition: gap .2s;
+        }
+        .svc-card:hover .svc-card-link { gap: 12px; }
+
+        /* ================================================
+           WHY US
+        ================================================ */
+        .why-us { padding: 100px 0; background: var(--cream); }
+        .why-us-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .why-us-visual { position: relative; }
+        .why-us-img-main {
+            width: 100%; aspect-ratio: 4/5; object-fit: cover;
+        }
+        .why-us-img-accent {
+            position: absolute; bottom: -28px; right: -28px;
+            width: 52%; aspect-ratio: 1; object-fit: cover;
+            border: 6px solid var(--white);
+            box-shadow: 0 18px 55px rgba(0,0,0,.18);
+        }
+        .why-us-badge {
+            position: absolute; top: 28px; left: -18px;
+            background: var(--navy); padding: 18px 22px; text-align: center;
+            box-shadow: 0 10px 36px rgba(26,40,71,.35);
+        }
+        .why-badge-num { display: block; font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; }
+        .why-badge-lbl { font-size: 0.66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+        .why-us-copy h2 { color: var(--navy); margin-bottom: 0; }
+        .why-us-copy > p { margin-bottom: 32px; }
+        .features { display: flex; flex-direction: column; gap: 24px; }
+        .feat { display: flex; gap: 18px; align-items: flex-start; }
+        .feat-icon {
+            width: 46px; height: 46px; background: var(--navy); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.15rem; flex-shrink: 0;
+        }
+        .feat h4 { font-family: var(--font-body); font-weight: 700; font-size: 0.96rem; color: var(--navy); margin-bottom: 3px; }
+        .feat p { font-size: 0.88rem; margin: 0; }
+
+        /* ================================================
+           STATS BANNER
+        ================================================ */
+        .stats { background: var(--navy); padding: 58px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: center; }
+        .stat { padding: 22px 20px; border-right: 1px solid rgba(255,255,255,.1); }
+        .stat:last-child { border-right: none; }
+        .stat-num { display: block; font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+        .stat-lbl  { font-size: 0.7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+
+        /* ================================================
+           TESTIMONIALS
+        ================================================ */
+        .testimonials { padding: 100px 0; background: var(--white); }
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .testi {
+            background: var(--cream); padding: 40px; position: relative;
+            border-bottom: 3px solid transparent; transition: border-color .25s;
+        }
+        .testi:hover { border-bottom-color: var(--gold); }
+        .testi::before {
+            content: '"'; position: absolute; top: 18px; left: 30px;
+            font-family: var(--font-display); font-size: 5rem; color: var(--gold);
+            opacity: .25; line-height: 1;
+        }
+        .testi-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 14px; }
+        .testi-text  { font-size: 0.94rem; font-style: italic; color: var(--charcoal); line-height: 1.8; margin-bottom: 22px; }
+        .testi-name  { font-weight: 700; font-size: 0.82rem; color: var(--navy); text-transform: uppercase; letter-spacing: .08em; }
+        .testi-loc   { font-size: 0.76rem; color: var(--gray); }
+
+        /* ================================================
+           DARK CTA BAND
+        ================================================ */
+        .cta-band {
+            background: var(--navy-dark); padding: 110px 0; position: relative;
+            overflow: hidden; text-align: center;
+        }
+        .cta-band::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 65% 80% at 50% 50%, rgba(200,148,58,.1) 0%, transparent 65%);
+        }
+        .cta-band-inner { position: relative; z-index: 1; }
+        .cta-band h2 { color: #fff; margin-bottom: 14px; }
+        .cta-band p  { color: rgba(255,255,255,.6); font-size: 1.06rem; margin-bottom: 38px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-band-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ================================================
+           PAGE HEADER (inner pages)
+        ================================================ */
+        .page-header {
+            background: var(--navy-dark); padding: 140px 0 68px; position: relative; overflow: hidden;
+        }
+        .page-header::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(26,40,71,.98) 0%, rgba(139,94,60,.35) 100%);
+        }
+        .page-header-inner { position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 9px; font-size: 0.7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 12px; }
+        .breadcrumb span:last-child { color: var(--gold-light); }
+        .breadcrumb span.crumb-link { cursor: pointer; transition: color .2s; }
+        .breadcrumb span.crumb-link:hover { color: rgba(255,255,255,.7); }
+        .page-header h1 { color: #fff; }
+        .page-header .ph-desc { color: rgba(255,255,255,.62); font-size: 1.06rem; margin-top: 14px; max-width: 540px; font-weight: 300; }
+
+        /* ================================================
+           SERVICES PAGE — ROWS
+        ================================================ */
+        .svc-rows { padding: 100px 0; }
+        .svc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: center; margin-bottom: 96px; }
+        .svc-row:last-child { margin-bottom: 0; }
+        .svc-row.flip { direction: rtl; }
+        .svc-row.flip > * { direction: ltr; }
+        .svc-row-img { position: relative; }
+        .svc-row-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+        .svc-row-tag {
+            position: absolute; bottom: -1px; left: -1px;
+            background: var(--gold); color: #fff; padding: 9px 18px;
+            font-size: 0.68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+        }
+        .svc-row-copy h3 { color: var(--navy); margin-bottom: 6px; }
+        .svc-row-copy p { margin-bottom: 16px; }
+        .svc-bullets { list-style: none; margin-bottom: 30px; }
+        .svc-bullets li {
+            padding: 8px 0; border-bottom: 1px solid var(--light-gray);
+            font-size: 0.88rem; color: var(--charcoal); display: flex; align-items: center; gap: 10px;
+        }
+        .svc-bullets li::before { content: ''; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+        /* ================================================
+           GALLERY
+        ================================================ */
+        .gallery-wrap { padding: 90px 0; }
+        .gallery-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 38px; }
+        .filter-btn {
+            padding: 8px 20px; border: 2px solid var(--light-gray); background: none;
+            font-family: var(--font-body); font-size: 0.75rem; font-weight: 700;
+            letter-spacing: .1em; text-transform: uppercase; cursor: pointer; color: var(--gray); transition: all .2s;
+        }
+        .filter-btn:hover, .filter-btn.active { border-color: var(--navy); background: var(--navy); color: #fff; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        .gal-item { position: relative; overflow: hidden; cursor: pointer; }
+        .gal-item.tall { grid-row: span 2; }
+        .gal-item.wide { grid-column: span 2; }
+        .gal-item img { width: 100%; height: 100%; object-fit: cover; min-height: 220px; transition: transform .5s ease; }
+        .gal-item:hover img { transform: scale(1.06); }
+        .gal-overlay {
+            position: absolute; inset: 0; background: rgba(17,29,54,0);
+            display: flex; align-items: center; justify-content: center;
+            transition: background .3s;
+        }
+        .gal-item:hover .gal-overlay { background: rgba(17,29,54,.6); }
+        .gal-label { color: #fff; font-family: var(--font-display); font-size: 1.05rem; text-align: center; padding: 16px; opacity: 0; transition: opacity .3s; }
+        .gal-item:hover .gal-label { opacity: 1; }
+        .gal-label small { display: block; font-family: var(--font-body); font-size: 0.75rem; color: var(--gold-pale); margin-top: 4px; font-style: normal; font-weight: 600; }
+
+        /* ================================================
+           ABOUT
+        ================================================ */
+        .about-story { padding: 100px 0; }
+        .about-story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-copy p { margin-bottom: 18px; }
+        .about-img-wrap { position: relative; }
+        .about-img-wrap img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+        .about-img-border { position: absolute; top: -18px; right: -18px; bottom: 18px; left: 18px; border: 3px solid var(--gold); z-index: -1; }
+
+        .values-section { padding: 96px 0; background: var(--navy); }
+        .values-section .eyebrow { color: var(--gold-light); }
+        .values-section h2 { color: #fff; }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 56px; }
+        .val-card {
+            text-align: center; padding: 38px 22px;
+            border: 1px solid rgba(255,255,255,.1); transition: border-color .3s, background .3s;
+        }
+        .val-card:hover { border-color: var(--gold); background: rgba(200,148,58,.06); }
+        .val-icon { font-size: 2.4rem; margin-bottom: 18px; display: block; }
+        .val-card h4 { font-family: var(--font-body); font-weight: 700; font-size: 0.95rem; color: #fff; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+        .val-card p { font-size: 0.86rem; color: rgba(255,255,255,.55); margin: 0; }
+
+        .area-section { padding: 96px 0; background: var(--cream); }
+        .area-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .area-copy h2 { color: var(--navy); }
+        .area-copy p { margin-bottom: 22px; }
+        .area-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
+        .area-item { display: flex; align-items: center; gap: 9px; font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+        .area-item::before { content: '◆'; color: var(--gold); font-size: 0.46rem; }
+        .area-map {
+            background: var(--navy); min-height: 380px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: rgba(255,255,255,.35); gap: 10px;
+        }
+        .area-map span:first-child { font-size: 3rem; }
+        .area-map span:nth-child(2) { font-size: 0.82rem; letter-spacing: .12em; text-transform: uppercase; }
+        .area-map small { font-size: 0.72rem; color: rgba(255,255,255,.22); }
+
+        /* ================================================
+           CONTACT
+        ================================================ */
+        .contact-wrap { padding: 96px 0; }
+        .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
+        .contact-info h3 { font-size: 1.55rem; color: var(--navy); margin-bottom: 20px; }
+        .contact-info > p { margin-bottom: 38px; }
+        .c-detail { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+        .c-icon { width: 44px; height: 44px; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+        .c-label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--navy); margin-bottom: 2px; }
+        .c-val { font-size: 0.94rem; color: var(--charcoal); text-decoration: none; }
+        .hours { margin-top: 38px; border-top: 2px solid var(--gold); }
+        .hour-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--light-gray); font-size: 0.86rem; }
+        .hour-row .day { font-weight: 700; color: var(--navy); }
+        .hour-row .time { color: var(--gray); }
+
+        /* form */
+        .quote-form { background: var(--cream); padding: 48px; }
+        .quote-form h3 { color: var(--navy); margin-bottom: 6px; }
+        .form-sub { font-size: 0.88rem; color: var(--gray); margin-bottom: 30px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group.span2 { grid-column: 1/-1; }
+        .form-group label { font-size: 0.68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 11px 14px; border: 2px solid var(--light-gray); background: #fff;
+            font-family: var(--font-body); font-size: 0.94rem; color: var(--charcoal);
+            transition: border-color .2s; outline: none; -webkit-appearance: none; border-radius: 0;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: var(--navy); }
+        .form-group textarea { resize: vertical; min-height: 110px; }
+        .form-submit { margin-top: 22px; }
+        .form-submit .btn { width: 100%; text-align: center; }
+        .form-note { font-size: 0.76rem; color: var(--gray); margin-top: 10px; }
+        .form-success { display: none; text-align: center; padding: 50px 30px; }
+        .form-success-icon { font-size: 3rem; margin-bottom: 14px; }
+        .form-success h3 { color: var(--navy); margin-bottom: 10px; }
+
+        /* ================================================
+           FOOTER
+        ================================================ */
+        .footer { background: var(--navy-dark); padding: 76px 0 36px; }
+        .footer-top {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 56px; padding-bottom: 56px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .footer-brand-name { font-family: var(--font-display); font-size: 1.45rem; color: #fff; font-weight: 700; }
+        .footer-brand-sub  { font-size: 0.62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+        .footer-brand p { color: rgba(255,255,255,.5); font-size: 0.86rem; line-height: 1.8; max-width: 270px; }
+        .footer-col h5 { font-size: 0.68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+        .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: 0.86rem; cursor: pointer; transition: color .2s; }
+        .footer-links a:hover { color: var(--gold-light); }
+        .f-contact { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; }
+        .f-contact-icon { color: var(--gold); font-size: 0.88rem; margin-top: 2px; }
+        .f-contact a, .f-contact span { color: rgba(255,255,255,.5); font-size: 0.86rem; text-decoration: none; line-height: 1.5; transition: color .2s; }
+        .f-contact a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; }
+        .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,.28); }
+        .social-row { display: flex; gap: 12px; }
+        .soc {
+            width: 35px; height: 35px; border: 1px solid rgba(255,255,255,.15);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,.45); text-decoration: none; font-size: 0.82rem;
+            font-weight: 700; transition: all .2s;
+        }
+        .soc:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ================================================
+           RESPONSIVE
+        ================================================ */
+        @media (max-width: 1024px) {
+            .svc-grid { grid-template-columns: repeat(2,1fr); }
+            .why-us-inner, .about-story-inner { gap: 50px; }
+            .stats-grid { grid-template-columns: repeat(2,1fr); }
+            .testi-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: repeat(2,1fr); }
+            .area-inner { gap: 50px; }
+            .contact-inner { gap: 48px; }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 22px; }
+            .nav-links, .nav-cta-desk { display: none !important; }
+            .hamburger { display: flex; }
+            .hero-content { padding: 120px 22px 60px; margin-left: 0; }
+            .svc-grid { grid-template-columns: 1fr; }
+            .why-us-inner { grid-template-columns: 1fr; }
+            .why-us-visual { display: none; }
+            .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+            .testi-grid { grid-template-columns: 1fr; }
+            .svc-row { grid-template-columns: 1fr; gap: 36px; }
+            .svc-row.flip { direction: ltr; }
+            .gallery-grid { grid-template-columns: repeat(2,1fr); }
+            .gal-item.wide { grid-column: span 1; }
+            .gal-item.tall { grid-row: span 1; }
+            .about-story-inner { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2,1fr); }
+            .area-inner { grid-template-columns: 1fr; }
+            .contact-inner { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .quote-form { padding: 28px 20px; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .footer-bottom { flex-direction: column; gap: 14px; }
+            .hero-ctas { flex-direction: column; }
+            .cta-band-btns { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 480px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2,1fr); }
+        }
+
+        /* ================================================
+           SCROLL ANIMATION SETUP
+        ================================================ */
+        .animate-up {
+            opacity: 0; transform: translateY(28px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+        .animate-up.visible { opacity: 1; transform: none; }
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+======================================== -->
+<nav class="nav" id="mainNav">
+    <div class="nav-inner">
+        <div class="nav-brand" onclick="gotoPage('home')">
+            <span class="nav-brand-name">True Flooring Co.</span>
+            <span class="nav-brand-sub">Northport, Alabama</span>
+        </div>
+        <ul class="nav-links">
+            <li><a id="n-home"     onclick="gotoPage('home')"     class="active">Home</a></li>
+            <li><a id="n-services" onclick="gotoPage('services')">Services</a></li>
+            <li><a id="n-gallery"  onclick="gotoPage('gallery')">Gallery</a></li>
+            <li><a id="n-about"    onclick="gotoPage('about')">About</a></li>
+            <li><a id="n-contact"  onclick="gotoPage('contact')">Contact</a></li>
+        </ul>
+        <a class="btn btn-gold nav-cta nav-cta-desk" onclick="gotoPage('contact')">Free Estimate</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close">✕</button>
+    <a onclick="gotoPage('home');closeMobile()">Home</a>
+    <a onclick="gotoPage('services');closeMobile()">Services</a>
+    <a onclick="gotoPage('gallery');closeMobile()">Gallery</a>
+    <a onclick="gotoPage('about');closeMobile()">About</a>
+    <a onclick="gotoPage('contact');closeMobile()">Contact</a>
+    <a class="btn btn-gold" onclick="gotoPage('contact');closeMobile()">Free Estimate</a>
+</div>
+
+
+<!-- ==========================================
+     HOME PAGE
+========================================== -->
+<div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-line"></div>
+                <span class="hero-eyebrow-text">Northport, Alabama's Flooring Specialists</span>
+            </div>
+            <h1>Quality Floors,<br><em>True Craftsmanship.</em></h1>
+            <p class="hero-desc">From hardwood to luxury vinyl, tile to carpet — we deliver expert installation with honest service and meticulous attention to every detail in every home we touch.</p>
+            <div class="hero-ctas">
+                <a class="btn btn-gold"         onclick="gotoPage('contact')">Get a Free Estimate</a>
+                <a class="btn btn-outline-white" onclick="gotoPage('services')">Explore Services</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">Scroll</div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header animate-up">
+                <span class="eyebrow">What We Offer</span>
+                <h2>Flooring for Every Room,<br>Every Style</h2>
+                <div class="gold-rule center"></div>
+            </div>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card animate-up" onclick="gotoPage('services')">
+                <div class="svc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
+                <div class="svc-card-overlay"></div>
+                <div class="svc-card-content">
+                    <h3>Hardwood Flooring</h3>
+                    <p>Solid and engineered hardwood that adds timeless value to any room.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+            <div class="svc-card animate-up" onclick="gotoPage('services')">
+                <div class="svc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80')"></div>
+                <div class="svc-card-overlay"></div>
+                <div class="svc-card-content">
+                    <h3>Luxury Vinyl Plank</h3>
+                    <p>Waterproof, durable, and stunning — perfect for any lifestyle.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+            <div class="svc-card animate-up" onclick="gotoPage('services')">
+                <div class="svc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80')"></div>
+                <div class="svc-card-overlay"></div>
+                <div class="svc-card-content">
+                    <h3>Tile &amp; Stone</h3>
+                    <p>Precision tile installation for kitchens, baths, and beyond.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+            <div class="svc-card animate-up" onclick="gotoPage('services')">
+                <div class="svc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80')"></div>
+                <div class="svc-card-overlay"></div>
+                <div class="svc-card-content">
+                    <h3>Carpet</h3>
+                    <p>Soft, comfortable carpet for the rooms where comfort matters most.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+            <div class="svc-card animate-up" onclick="gotoPage('services')">
+                <div class="svc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80')"></div>
+                <div class="svc-card-overlay"></div>
+                <div class="svc-card-content">
+                    <h3>Laminate</h3>
+                    <p>Hardwood-look beauty at an accessible price point.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+            <div class="svc-card animate-up" onclick="gotoPage('services')" style="cursor:pointer;">
+                <div class="svc-card-bg" style="background:linear-gradient(135deg,#1a2847 0%,#8b5e3c 100%)"></div>
+                <div class="svc-card-overlay" style="background:none;"></div>
+                <div class="svc-card-content" style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;">
+                    <h3>Subfloor &amp; Repairs</h3>
+                    <p>Proper prep and repair work for lasting, problem-free floors.</p>
+                    <span class="svc-card-link">Learn More →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-inner">
+                <div class="why-us-visual">
+                    <div class="why-us-badge">
+                        <span class="why-badge-num">100%</span>
+                        <span class="why-badge-lbl">Satisfaction<br>Guaranteed</span>
+                    </div>
+                    <img class="why-us-img-main animate-up"
+                        src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80"
+                        alt="Professional flooring installation" loading="lazy" />
+                    <img class="why-us-img-accent animate-up"
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                        alt="Hardwood floor detail" loading="lazy" />
+                </div>
+                <div class="why-us-copy animate-up">
+                    <span class="eyebrow">Why True Flooring</span>
+                    <h2>Local Experts Who<br>Get It Right</h2>
+                    <div class="gold-rule"></div>
+                    <p>We're not a big-box franchise — we're your neighbors in Northport, AL. True Flooring Company was built on the belief that every homeowner deserves honest advice, fair pricing, and floors that look exceptional for years to come.</p>
+                    <div class="features">
+                        <div class="feat">
+                            <div class="feat-icon">◆</div>
+                            <div>
+                                <h4>Expert Installation</h4>
+                                <p>Every job is executed by skilled installers who take genuine pride in precision and craftsmanship.</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon">◆</div>
+                            <div>
+                                <h4>Free In-Home Estimates</h4>
+                                <p>We come to you — measuring your space and delivering a detailed, no-obligation quote.</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon">◆</div>
+                            <div>
+                                <h4>Wide Product Selection</h4>
+                                <p>Top brands in hardwood, LVP, tile, carpet, and laminate to fit any budget and vision.</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon">◆</div>
+                            <div>
+                                <h4>Locally Owned &amp; Operated</h4>
+                                <p>Proudly based in Northport, serving Tuscaloosa County and surrounding communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat animate-up">
+                    <span class="stat-num">5 ★</span>
+                    <span class="stat-lbl">Rated by Customers</span>
+                </div>
+                <div class="stat animate-up">
+                    <span class="stat-num">6+</span>
+                    <span class="stat-lbl">Flooring Types Offered</span>
+                </div>
+                <div class="stat animate-up">
+                    <span class="stat-num">Free</span>
+                    <span class="stat-lbl">In-Home Estimates</span>
+                </div>
+                <div class="stat animate-up">
+                    <span class="stat-num">Local</span>
+                    <span class="stat-lbl">Northport, AL Based</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header animate-up">
+                <span class="eyebrow">What Our Customers Say</span>
+                <h2>Real Reviews from Real Neighbors</h2>
+                <div class="gold-rule center"></div>
+            </div>
+            <div class="testi-grid">
+                <div class="testi animate-up">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">True Flooring did an amazing job on our living room and hallway. They were on time, professional, and the floors look absolutely gorgeous. I'll be calling them again for the bedrooms!</p>
+                    <div class="testi-name">Sarah M.</div>
+                    <div class="testi-loc">Northport, AL</div>
+                </div>
+                <div class="testi animate-up">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">We had LVP installed throughout our entire first floor. The team was knowledgeable, efficient, and left the place spotless. Highly recommend True Flooring to anyone in the area!</p>
+                    <div class="testi-name">James &amp; Donna K.</div>
+                    <div class="testi-loc">Tuscaloosa, AL</div>
+                </div>
+                <div class="testi animate-up">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">Friendly, honest, and skilled. They helped me choose the right tile for my kitchen and bathroom and the craftsmanship is top-notch. I won't use anyone else.</p>
+                    <div class="testi-name">Robert T.</div>
+                    <div class="testi-loc">Northport, AL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-band-inner animate-up">
+                <span class="eyebrow" style="color:var(--gold-light);">Ready to Get Started?</span>
+                <h2>Your Dream Floor<br>Is One Call Away</h2>
+                <p>Contact us today for a free in-home estimate. Honest advice, fair pricing — no pressure.</p>
+                <div class="cta-band-btns">
+                    <a class="btn btn-gold"         onclick="gotoPage('contact')">Request a Free Quote</a>
+                    <a class="btn btn-outline-white" href="tel:+12055551234">Call Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer-home">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">True Flooring Company</div>
+                    <span class="footer-brand-sub">Northport, Alabama</span>
+                    <p>Your local flooring experts serving Northport, Tuscaloosa, and surrounding communities. Honest pricing, expert installation, floors you'll love for years.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a onclick="gotoPage('services')">Hardwood Flooring</a></li>
+                        <li><a onclick="gotoPage('services')">Luxury Vinyl Plank</a></li>
+                        <li><a onclick="gotoPage('services')">Tile &amp; Stone</a></li>
+                        <li><a onclick="gotoPage('services')">Carpet</a></li>
+                        <li><a onclick="gotoPage('services')">Laminate</a></li>
+                        <li><a onclick="gotoPage('services')">Subfloor &amp; Repairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a onclick="gotoPage('home')">Home</a></li>
+                        <li><a onclick="gotoPage('about')">About Us</a></li>
+                        <li><a onclick="gotoPage('gallery')">Project Gallery</a></li>
+                        <li><a onclick="gotoPage('contact')">Contact</a></li>
+                        <li><a onclick="gotoPage('contact')">Free Estimate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="f-contact"><span class="f-contact-icon">📍</span><span>Northport, AL<br>Tuscaloosa County</span></div>
+                    <div class="f-contact"><span class="f-contact-icon">📞</span><a href="tel:+12055551234">(205) 555-1234</a></div>
+                    <div class="f-contact"><span class="f-contact-icon">✉️</span><a href="mailto:info@trueflooringco.com">info@trueflooringco.com</a></div>
+                    <div class="f-contact"><span class="f-contact-icon">🕐</span><span>Mon–Fri 8am–5pm<br>Sat 9am–3pm</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 True Flooring Company. All rights reserved. Northport, AL.</p>
+                <div class="social-row">
+                    <a class="soc" href="#" aria-label="Facebook">f</a>
+                    <a class="soc" href="#" aria-label="Instagram">ig</a>
+                    <a class="soc" href="#" aria-label="Google">g+</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div><!-- end home -->
+
+
+<!-- ==========================================
+     SERVICES PAGE
+========================================== -->
+<div class="page" id="page-services">
+
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-inner">
+                <div class="breadcrumb">
+                    <span class="crumb-link" onclick="gotoPage('home')">Home</span>
+                    <span>›</span><span>Services</span>
+                </div>
+                <h1>Our Services</h1>
+                <p class="ph-desc">Expert installation across six flooring types — handled with care and craftsmanship from start to finish.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="svc-rows">
+        <div class="container">
+
+            <!-- Hardwood -->
+            <div class="svc-row animate-up">
+                <div class="svc-row-img">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Hardwood flooring installation" loading="lazy" />
+                    <div class="svc-row-tag">Hardwood Flooring</div>
+                </div>
+                <div class="svc-row-copy">
+                    <span class="eyebrow">Classic &amp; Timeless</span>
+                    <h3>Hardwood Flooring</h3>
+                    <div class="gold-rule"></div>
+                    <p>Nothing compares to the warmth and lasting beauty of real hardwood. We install both solid and engineered hardwood in a wide range of species, stain colors, and plank widths to perfectly match your home's character.</p>
+                    <p>With proper care, hardwood adds lasting value and can last a lifetime. Our installers ensure tight, seamless results in every room.</p>
+                    <ul class="svc-bullets">
+                        <li>Solid &amp; engineered hardwood</li>
+                        <li>Oak, maple, hickory, walnut &amp; more</li>
+                        <li>Nail-down, glue-down &amp; floating methods</li>
+                        <li>Sanding, staining &amp; refinishing</li>
+                        <li>Subfloor assessment &amp; prep</li>
+                    </ul>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')">Get a Free Quote</a>
+                </div>
+            </div>
+
+            <!-- LVP -->
+            <div class="svc-row flip animate-up">
+                <div class="svc-row-img">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Luxury Vinyl Plank flooring" loading="lazy" />
+                    <div class="svc-row-tag">Luxury Vinyl Plank</div>
+                </div>
+                <div class="svc-row-copy">
+                    <span class="eyebrow">Waterproof &amp; Durable</span>
+                    <h3>Luxury Vinyl Plank</h3>
+                    <div class="gold-rule"></div>
+                    <p>LVP is one of the most popular flooring choices today — 100% waterproof, incredibly durable, easy to maintain, and available in stunning wood and stone looks that rival the real thing.</p>
+                    <p>Perfect for kitchens, bathrooms, basements, and households with pets or kids. We carry top-rated brands at competitive prices.</p>
+                    <ul class="svc-bullets">
+                        <li>100% waterproof construction</li>
+                        <li>Floating &amp; glue-down installation</li>
+                        <li>Wide range of wood &amp; stone visuals</li>
+                        <li>Pet, child &amp; scratch-resistant options</li>
+                        <li>Suitable for all rooms including basements</li>
+                    </ul>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')">Get a Free Quote</a>
+                </div>
+            </div>
+
+            <!-- Tile -->
+            <div class="svc-row animate-up">
+                <div class="svc-row-img">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80" alt="Tile flooring installation" loading="lazy" />
+                    <div class="svc-row-tag">Tile &amp; Stone</div>
+                </div>
+                <div class="svc-row-copy">
+                    <span class="eyebrow">Precision &amp; Style</span>
+                    <h3>Tile &amp; Stone</h3>
+                    <div class="gold-rule"></div>
+                    <p>Our tile team delivers flawless results in kitchens, bathrooms, entryways, and outdoor areas. From classic subway tile to large-format porcelain and natural stone, we handle every style with precision.</p>
+                    <p>Proper tile installation starts with preparation — we ensure every surface is leveled and waterproofed before setting the first tile.</p>
+                    <ul class="svc-bullets">
+                        <li>Porcelain, ceramic, natural stone &amp; mosaic</li>
+                        <li>Floor, wall &amp; shower tile installation</li>
+                        <li>Large-format &amp; custom pattern layouts</li>
+                        <li>Waterproofing for wet areas</li>
+                        <li>Grout color selection, matching &amp; sealing</li>
+                    </ul>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')">Get a Free Quote</a>
+                </div>
+            </div>
+
+            <!-- Carpet -->
+            <div class="svc-row flip animate-up">
+                <div class="svc-row-img">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Carpet installation" loading="lazy" />
+                    <div class="svc-row-tag">Carpet</div>
+                </div>
+                <div class="svc-row-copy">
+                    <span class="eyebrow">Comfort &amp; Warmth</span>
+                    <h3>Carpet</h3>
+                    <div class="gold-rule"></div>
+                    <p>Carpet remains the top choice for bedrooms and living areas where comfort and quiet are a priority. We offer a wide variety of styles, textures, and fibers from trusted brands, with professional installation that stretches tightly and lasts for years.</p>
+                    <ul class="svc-bullets">
+                        <li>Plush, berber, frieze &amp; loop styles</li>
+                        <li>Stain-resistant &amp; pet-friendly options</li>
+                        <li>Padding selection &amp; installation</li>
+                        <li>Stairs, hallways &amp; custom cuts</li>
+                        <li>Old carpet removal &amp; disposal available</li>
+                    </ul>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')">Get a Free Quote</a>
+                </div>
+            </div>
+
+            <!-- Laminate -->
+            <div class="svc-row animate-up">
+                <div class="svc-row-img">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Laminate flooring" loading="lazy" />
+                    <div class="svc-row-tag">Laminate</div>
+                </div>
+                <div class="svc-row-copy">
+                    <span class="eyebrow">Affordable &amp; Beautiful</span>
+                    <h3>Laminate Flooring</h3>
+                    <div class="gold-rule"></div>
+                    <p>Laminate gives you the look of hardwood at a fraction of the cost. Modern laminate is incredibly realistic, highly durable, and simple to maintain — an excellent choice for high-traffic areas and budget-conscious projects.</p>
+                    <ul class="svc-bullets">
+                        <li>Realistic wood &amp; stone look options</li>
+                        <li>Scratch &amp; fade-resistant wear layer</li>
+                        <li>Click-lock floating installation</li>
+                        <li>AC3 and AC4 commercial-grade options</li>
+                        <li>Moisture-resistant underlayment included</li>
+                    </ul>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')">Get a Free Quote</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-band-inner animate-up">
+                <span class="eyebrow" style="color:var(--gold-light);">No Pressure, No Obligation</span>
+                <h2>Not Sure Which Floor<br>Is Right for You?</h2>
+                <p>We'll come to your home, assess the space, and walk you through your best options — completely free.</p>
+                <a class="btn btn-gold" onclick="gotoPage('contact')">Schedule a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">True Flooring Company</div>
+                    <span class="footer-brand-sub">Northport, Alabama</span>
+                    <p>Your local flooring experts serving Northport, Tuscaloosa, and surrounding communities.</p>
+                </div>
+                <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a onclick="gotoPage('services')">Hardwood Flooring</a></li><li><a onclick="gotoPage('services')">Luxury Vinyl Plank</a></li><li><a onclick="gotoPage('services')">Tile &amp; Stone</a></li><li><a onclick="gotoPage('services')">Carpet</a></li><li><a onclick="gotoPage('services')">Laminate</a></li></ul></div>
+                <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="gotoPage('home')">Home</a></li><li><a onclick="gotoPage('about')">About Us</a></li><li><a onclick="gotoPage('gallery')">Gallery</a></li><li><a onclick="gotoPage('contact')">Contact</a></li></ul></div>
+                <div class="footer-col"><h5>Contact</h5><div class="f-contact"><span class="f-contact-icon">📍</span><span>Northport, AL</span></div><div class="f-contact"><span class="f-contact-icon">📞</span><a href="tel:+12055551234">(205) 555-1234</a></div><div class="f-contact"><span class="f-contact-icon">✉️</span><a href="mailto:info@trueflooringco.com">info@trueflooringco.com</a></div></div>
+            </div>
+            <div class="footer-bottom"><p class="footer-copy">© 2025 True Flooring Company. All rights reserved.</p><div class="social-row"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">g+</a></div></div>
+        </div>
+    </footer>
+</div><!-- end services -->
+
+
+<!-- ==========================================
+     GALLERY PAGE
+========================================== -->
+<div class="page" id="page-gallery">
+
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-inner">
+                <div class="breadcrumb">
+                    <span class="crumb-link" onclick="gotoPage('home')">Home</span>
+                    <span>›</span><span>Gallery</span>
+                </div>
+                <h1>Project Gallery</h1>
+                <p class="ph-desc">Browse completed installations from homes across Northport and Tuscaloosa County.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="gallery-wrap">
+        <div class="container">
+            <div class="gallery-filters animate-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="hardwood">Hardwood</button>
+                <button class="filter-btn" data-filter="lvp">Luxury Vinyl</button>
+                <button class="filter-btn" data-filter="tile">Tile</button>
+                <button class="filter-btn" data-filter="carpet">Carpet</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gal-item tall animate-up" data-type="hardwood">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Hardwood floor install" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Hardwood<small>Living Room Install</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="lvp">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="LVP flooring" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Luxury Vinyl<small>Kitchen &amp; Dining</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="tile">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80" alt="Tile installation" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Tile<small>Bathroom Floor</small></div></div>
+                </div>
+                <div class="gal-item wide animate-up" data-type="hardwood">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80" alt="Open plan hardwood" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Hardwood<small>Open Plan Living</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="carpet">
+                    <img src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=600&q=80" alt="Carpet bedroom" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Carpet<small>Master Bedroom</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="lvp">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="LVP whole home" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Luxury Vinyl<small>Whole Home Install</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="tile">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Shower tile" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Tile<small>Shower &amp; Bath</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="hardwood">
+                    <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&q=80" alt="Dark stained hardwood" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Hardwood<small>Dining Room Stain</small></div></div>
+                </div>
+                <div class="gal-item animate-up" data-type="lvp">
+                    <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80" alt="Basement vinyl" loading="lazy" />
+                    <div class="gal-overlay"><div class="gal-label">Luxury Vinyl<small>Basement Remodel</small></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-band-inner animate-up">
+                <h2>Love What You See?</h2>
+                <p>Let's create something beautiful in your home. Request your free estimate today.</p>
+                <a class="btn btn-gold" onclick="gotoPage('contact')">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand"><div class="footer-brand-name">True Flooring Company</div><span class="footer-brand-sub">Northport, Alabama</span><p>Your local flooring experts serving Northport, Tuscaloosa, and surrounding communities.</p></div>
+                <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a onclick="gotoPage('services')">Hardwood</a></li><li><a onclick="gotoPage('services')">Luxury Vinyl</a></li><li><a onclick="gotoPage('services')">Tile &amp; Stone</a></li><li><a onclick="gotoPage('services')">Carpet</a></li><li><a onclick="gotoPage('services')">Laminate</a></li></ul></div>
+                <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="gotoPage('home')">Home</a></li><li><a onclick="gotoPage('about')">About</a></li><li><a onclick="gotoPage('gallery')">Gallery</a></li><li><a onclick="gotoPage('contact')">Contact</a></li></ul></div>
+                <div class="footer-col"><h5>Contact</h5><div class="f-contact"><span class="f-contact-icon">📞</span><a href="tel:+12055551234">(205) 555-1234</a></div><div class="f-contact"><span class="f-contact-icon">✉️</span><a href="mailto:info@trueflooringco.com">info@trueflooringco.com</a></div><div class="f-contact"><span class="f-contact-icon">📍</span><span>Northport, AL</span></div></div>
+            </div>
+            <div class="footer-bottom"><p class="footer-copy">© 2025 True Flooring Company. All rights reserved.</p><div class="social-row"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a></div></div>
+        </div>
+    </footer>
+</div><!-- end gallery -->
+
+
+<!-- ==========================================
+     ABOUT PAGE
+========================================== -->
+<div class="page" id="page-about">
+
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-inner">
+                <div class="breadcrumb">
+                    <span class="crumb-link" onclick="gotoPage('home')">Home</span>
+                    <span>›</span><span>About Us</span>
+                </div>
+                <h1>About True Flooring</h1>
+                <p class="ph-desc">Locally owned and operated, built on craftsmanship, honesty, and a passion for beautiful floors.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-story">
+        <div class="container">
+            <div class="about-story-inner">
+                <div class="about-copy animate-up">
+                    <span class="eyebrow">Our Story</span>
+                    <h2>Rooted in Northport,<br>Built to Last</h2>
+                    <div class="gold-rule"></div>
+                    <p>True Flooring Company was founded with a clear purpose: to bring expert-level flooring services to homeowners in Northport and the greater Tuscaloosa area — without the franchise price tag or impersonal service that often comes with it.</p>
+                    <p>We're a locally owned and operated business that treats every home the same way we'd treat our own. From the first consultation to the final walk-through, we're committed to honesty, quality, and your complete satisfaction.</p>
+                    <p>Whether you're renovating one room or transforming your entire home, you'll work directly with our experienced team every step of the way. No subcontractors, no surprises, no shortcuts.</p>
+                    <a class="btn btn-gold" onclick="gotoPage('contact')" style="margin-top:18px;">Work With Us</a>
+                </div>
+                <div class="about-img-wrap animate-up">
+                    <div class="about-img-border"></div>
+                    <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80" alt="True Flooring team at work" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header animate-up">
+                <span class="eyebrow">What We Stand For</span>
+                <h2 style="color:#fff;">Our Core Values</h2>
+                <div class="gold-rule center"></div>
+            </div>
+            <div class="values-grid">
+                <div class="val-card animate-up">
+                    <span class="val-icon">🧭</span>
+                    <h4>True Craftsmanship</h4>
+                    <p>We take our name seriously. Every install is executed with precision and a commitment to doing it right the first time.</p>
+                </div>
+                <div class="val-card animate-up">
+                    <span class="val-icon">🤝</span>
+                    <h4>Honest Service</h4>
+                    <p>Straightforward pricing, no hidden fees, no hard selling. We recommend what's genuinely best for you and your home.</p>
+                </div>
+                <div class="val-card animate-up">
+                    <span class="val-icon">🏘️</span>
+                    <h4>Community First</h4>
+                    <p>As a locally owned business, we're invested in Northport. Supporting our community is at the heart of what we do.</p>
+                </div>
+                <div class="val-card animate-up">
+                    <span class="val-icon">⭐</span>
+                    <h4>100% Satisfaction</h4>
+                    <p>We don't consider a job done until you're completely happy. Your satisfaction is our greatest measure of success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="area-section">
+        <div class="container">
+            <div class="area-inner">
+                <div class="animate-up">
+                    <span class="eyebrow">Where We Serve</span>
+                    <h2>Northport &amp;<br>Surrounding Communities</h2>
+                    <div class="gold-rule"></div>
+                    <p>Based in Northport, Alabama, we proudly serve homeowners throughout Tuscaloosa County and neighboring communities. Not sure if we cover your area? Just give us a call — we're happy to help.</p>
+                    <div class="area-list">
+                        <div class="area-item">Northport</div>
+                        <div class="area-item">Tuscaloosa</div>
+                        <div class="area-item">Cottondale</div>
+                        <div class="area-item">Fosters</div>
+                        <div class="area-item">Coker</div>
+                        <div class="area-item">Brookwood</div>
+                        <div class="area-item">Duncanville</div>
+                        <div class="area-item">Vance</div>
+                    </div>
+                    <a class="btn btn-navy" onclick="gotoPage('contact')" style="margin-top:32px;">Check Your Area</a>
+                </div>
+                <div class="area-map animate-up">
+                    <span>🗺️</span>
+                    <span>Northport, AL</span>
+                    <small>Google Maps embed available</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand"><div class="footer-brand-name">True Flooring Company</div><span class="footer-brand-sub">Northport, Alabama</span><p>Your local flooring experts serving Northport, Tuscaloosa, and surrounding communities.</p></div>
+                <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a onclick="gotoPage('services')">Hardwood</a></li><li><a onclick="gotoPage('services')">Luxury Vinyl</a></li><li><a onclick="gotoPage('services')">Tile &amp; Stone</a></li><li><a onclick="gotoPage('services')">Carpet</a></li><li><a onclick="gotoPage('services')">Laminate</a></li></ul></div>
+                <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="gotoPage('home')">Home</a></li><li><a onclick="gotoPage('about')">About Us</a></li><li><a onclick="gotoPage('gallery')">Gallery</a></li><li><a onclick="gotoPage('contact')">Contact</a></li></ul></div>
+                <div class="footer-col"><h5>Contact</h5><div class="f-contact"><span class="f-contact-icon">📞</span><a href="tel:+12055551234">(205) 555-1234</a></div><div class="f-contact"><span class="f-contact-icon">✉️</span><a href="mailto:info@trueflooringco.com">info@trueflooringco.com</a></div><div class="f-contact"><span class="f-contact-icon">📍</span><span>Northport, AL</span></div></div>
+            </div>
+            <div class="footer-bottom"><p class="footer-copy">© 2025 True Flooring Company. All rights reserved.</p><div class="social-row"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a></div></div>
+        </div>
+    </footer>
+</div><!-- end about -->
+
+
+<!-- ==========================================
+     CONTACT PAGE
+========================================== -->
+<div class="page" id="page-contact">
+
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-inner">
+                <div class="breadcrumb">
+                    <span class="crumb-link" onclick="gotoPage('home')">Home</span>
+                    <span>›</span><span>Contact</span>
+                </div>
+                <h1>Get in Touch</h1>
+                <p class="ph-desc">Request a free estimate or ask us anything — we typically respond within one business day.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-wrap">
+        <div class="container">
+            <div class="contact-inner">
+
+                <div class="contact-info animate-up">
+                    <h3>Let's Talk Floors</h3>
+                    <p>Whether you're ready to start or just exploring your options, we'd love to hear from you. Fill out the form and we'll reach out promptly to set up your free in-home estimate.</p>
+                    <div class="c-detail">
+                        <div class="c-icon">📞</div>
+                        <div>
+                            <span class="c-label">Phone</span>
+                            <a class="c-val" href="tel:+12055551234">(205) 555-1234</a>
+                        </div>
+                    </div>
+                    <div class="c-detail">
+                        <div class="c-icon">✉️</div>
+                        <div>
+                            <span class="c-label">Email</span>
+                            <a class="c-val" href="mailto:info@trueflooringco.com">info@trueflooringco.com</a>
+                        </div>
+                    </div>
+                    <div class="c-detail">
+                        <div class="c-icon">📍</div>
+                        <div>
+                            <span class="c-label">Service Area</span>
+                            <span class="c-val">Northport, AL &amp; Tuscaloosa County</span>
+                        </div>
+                    </div>
+                    <div class="hours">
+                        <div class="hour-row"><span class="day">Monday – Friday</span><span class="time">8:00 AM – 5:00 PM</span></div>
+                        <div class="hour-row"><span class="day">Saturday</span><span class="time">9:00 AM – 3:00 PM</span></div>
+                        <div class="hour-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+                    </div>
+                </div>
+
+                <div class="quote-form animate-up" id="formBox">
+                    <h3>Request a Free Estimate</h3>
+                    <p class="form-sub">Fill out the form and we'll get back to you within one business day.</p>
+                    <form id="quoteForm" onsubmit="handleSubmit(event)" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fName">First Name *</label>
+                                <input type="text" id="fName" placeholder="John" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="lName">Last Name *</label>
+                                <input type="text" id="lName" placeholder="Smith" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fPhone">Phone *</label>
+                                <input type="tel" id="fPhone" placeholder="(205) 555-0000" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="fEmail">Email *</label>
+                                <input type="email" id="fEmail" placeholder="john@email.com" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group span2">
+                                <label for="fAddress">Project Address</label>
+                                <input type="text" id="fAddress" placeholder="123 Main St, Northport, AL" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group span2">
+                                <label for="fService">Service Interested In</label>
+                                <select id="fService">
+                                    <option value="">— Select a Service —</option>
+                                    <option>Hardwood Flooring</option>
+                                    <option>Luxury Vinyl Plank (LVP)</option>
+                                    <option>Tile &amp; Stone</option>
+                                    <option>Carpet</option>
+                                    <option>Laminate</option>
+                                    <option>Subfloor / Repair</option>
+                                    <option>Not sure yet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group span2">
+                                <label for="fSqft">Approximate Square Footage</label>
+                                <select id="fSqft">
+                                    <option value="">— Approximate Size —</option>
+                                    <option>Under 500 sq ft</option>
+                                    <option>500 – 1,000 sq ft</option>
+                                    <option>1,000 – 2,000 sq ft</option>
+                                    <option>2,000 – 3,000 sq ft</option>
+                                    <option>Over 3,000 sq ft</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group span2">
+                                <label for="fMessage">Project Details / Questions</label>
+                                <textarea id="fMessage" placeholder="Tell us about your project — rooms involved, current flooring, timeline, etc."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-gold">Submit Request</button>
+                            <p class="form-note">* Required fields. We respect your privacy and never share your information.</p>
+                        </div>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">✅</div>
+                        <h3>Thank You!</h3>
+                        <p style="color:var(--gray);">We've received your request and will be in touch within one business day to schedule your free in-home estimate.</p>
+                        <a class="btn btn-navy" onclick="gotoPage('home')" style="margin-top:20px;">Back to Home</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand"><div class="footer-brand-name">True Flooring Company</div><span class="footer-brand-sub">Northport, Alabama</span><p>Your local flooring experts serving Northport, Tuscaloosa, and surrounding communities.</p></div>
+                <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a onclick="gotoPage('services')">Hardwood</a></li><li><a onclick="gotoPage('services')">Luxury Vinyl</a></li><li><a onclick="gotoPage('services')">Tile</a></li><li><a onclick="gotoPage('services')">Carpet</a></li><li><a onclick="gotoPage('services')">Laminate</a></li></ul></div>
+                <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a onclick="gotoPage('home')">Home</a></li><li><a onclick="gotoPage('about')">About Us</a></li><li><a onclick="gotoPage('gallery')">Gallery</a></li><li><a onclick="gotoPage('contact')">Contact</a></li></ul></div>
+                <div class="footer-col"><h5>Contact</h5><div class="f-contact"><span class="f-contact-icon">📞</span><a href="tel:+12055551234">(205) 555-1234</a></div><div class="f-contact"><span class="f-contact-icon">✉️</span><a href="mailto:info@trueflooringco.com">info@trueflooringco.com</a></div><div class="f-contact"><span class="f-contact-icon">📍</span><span>Northport, AL</span></div></div>
+            </div>
+            <div class="footer-bottom"><p class="footer-copy">© 2025 True Flooring Company. All rights reserved.</p><div class="social-row"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a></div></div>
+        </div>
+    </footer>
+</div><!-- end contact -->
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+<script>
+/* ---- PAGE NAVIGATION ---- */
+function gotoPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('n-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    // re-trigger animations for new page
+    setTimeout(triggerAnimations, 50);
+}
+
+/* ---- NAV SCROLL ---- */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ---- MOBILE MENU ---- */
+document.getElementById('hamburgerBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('mobileClose').addEventListener('click', closeMobile);
+function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ---- GALLERY FILTER ---- */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const f = this.dataset.filter;
+        document.querySelectorAll('.gal-item').forEach(item => {
+            item.style.display = (f === 'all' || item.dataset.type === f) ? '' : 'none';
+        });
+    });
+});
+
+/* ---- FORM SUBMIT ---- */
+function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('quoteForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+}
+
+/* ---- SCROLL ANIMATIONS ---- */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+function triggerAnimations() {
+    document.querySelectorAll('.page.active .animate-up').forEach(el => {
+        observer.observe(el);
+        // immediately show any already in viewport
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40) {
+            el.classList.add('visible');
+        }
+    });
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(triggerAnimations, 100);
+    // stagger children of grids
+    document.querySelectorAll('.stats-grid .stat, .testi-grid .testi, .values-grid .val-card, .svc-grid .svc-card').forEach((el, i) => {
+        el.style.transitionDelay = (i * 80) + 'ms';
+    });
+});
+</script>
+</body>
+</html>
