@@ -492,6 +492,22 @@
   .hamburger span { width: 24px; height: 2px; background: var(--gold); display: block; }
   @media (max-width: 768px) { .hamburger { display: flex; } }
 
+  @media (max-width: 768px) {
+    .nav-links.nav-open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(26,10,0,0.97);
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      z-index: 99;
+      border-bottom: 2px solid var(--gold);
+    }
+  }
+
   /* ── MAP EMBED PLACEHOLDER ── */
   .map-wrap {
     margin-top: 2rem;
@@ -2000,13 +2016,22 @@
 
   // Mobile nav toggle
   function toggleMobileMenu() {
-    const links = document.querySelector('.nav-links');
-    if (links.style.display === 'flex') {
-      links.style.display = 'none';
-    } else {
-      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(26,10,0,0.97);padding:1.5rem 2rem;gap:1.2rem;z-index:99;border-bottom:2px solid var(--gold);';
-    }
+    document.querySelector('.nav-links').classList.toggle('nav-open');
   }
+
+  // Close menu when any nav link is tapped
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('nav-open');
+    });
+  });
+
+  // Close menu when tapping anywhere outside the nav
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+      document.querySelector('.nav-links').classList.remove('nav-open');
+    }
+  });
 
   // Smooth entrance animations on scroll
   const observer = new IntersectionObserver((entries) => {
