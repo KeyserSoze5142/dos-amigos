@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.dosamigosmexicangrill.com/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.dosamigosmexicangrill.com/menu/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dosamigosmexicangrill.com/specials/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dosamigosmexicangrill.com/hours-location/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dosamigosmexicangrill.com/gallery/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/shrimp-cocktail-1200.jpg</image:loc>
+      <image:title>Shrimp Cocktail</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/carne-asada-shrimp-skewers-1200.jpg</image:loc>
+      <image:title>Carne Asada + Shrimp Skewers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/mexican-wire-alambre-sq-1200.jpg</image:loc>
+      <image:title>Mexican Wire (Alambre)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/bosses-special-1200.jpg</image:loc>
+      <image:title>Bosse&#x27;s Special</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/hawaiian-nachos-1200.jpg</image:loc>
+      <image:title>Hawaiian Nachos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/quesabirria-tacos-1200.jpg</image:loc>
+      <image:title>Quesbirrias</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/pizzadilla-1200.jpg</image:loc>
+      <image:title>Pizzadilla</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/barrillas-de-camaron-1200.jpg</image:loc>
+      <image:title>Barrillas de Camarón</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/mexican-torta-1200.jpg</image:loc>
+      <image:title>Mexican Torta</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/grilled-chicken-chorizo-queso-1200.jpg</image:loc>
+      <image:title>Pollo a la Parrilla + Chorizo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/grilled-ribeye-1200.jpg</image:loc>
+      <image:title>Grilled Ribeye</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/fried-ice-cream-1200.jpg</image:loc>
+      <image:title>Fried Ice Cream</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/churros-1200.jpg</image:loc>
+      <image:title>Churros</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/chimi-cheesecake-1200.jpg</image:loc>
+      <image:title>Chimi-Cheesecake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dosamigosmexicangrill.com/images/dubai-cheesecake-1200.jpg</image:loc>
+      <image:title>Dubai Cheesecake</image:title>
+    </image:image>
+  </url>
+</urlset>
