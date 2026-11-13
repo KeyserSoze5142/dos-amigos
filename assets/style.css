@@ -628,10 +628,51 @@
     .callout { padding: 1.4rem; }
   }
 
-  .special-card.is-today { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+  /* ── WEEKLY SPECIALS ── */
+  .weekly { margin-top: 2rem; border: 1px solid rgba(212,160,23,0.25); }
+  .wk-head, .wk-row { display: grid; grid-template-columns: 150px 1fr 1fr; }
+  .wk-head { background: rgba(212,160,23,0.12); color: var(--gold-light); font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 1rem; }
+  .wk-head > div { padding: 0.8rem 1.2rem; }
+  .wk-head small { display: block; font-family: 'Libre Baskerville', serif; letter-spacing: 0; font-size: 0.68rem; color: var(--sand); text-transform: none; margin-top: 0.15rem; }
+  .wk-row { border-top: 1px solid rgba(255,255,255,0.08); position: relative; }
+  .wk-row.is-today { background: rgba(212,160,23,0.08); box-shadow: inset 4px 0 0 var(--gold); }
+  .wk-day { padding: 1rem 1.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: #fff; font-size: 1.05rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+  .wk-cell { padding: 1rem 1.2rem; border-left: 1px solid rgba(255,255,255,0.08); }
+  .wk-label { display: none; }
+  .wk-title { color: #fff; font-weight: 700; font-size: 0.92rem; }
+  .wk-desc { color: var(--sand); font-size: 0.78rem; font-style: italic; margin-top: 0.15rem; }
+  .wk-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; color: var(--gold); letter-spacing: 1px; margin-top: 0.3rem; }
+  .specials-note { margin-top: 1rem; color: var(--sand); font-size: 0.82rem; font-style: italic; line-height: 1.7; }
   .today-badge {
-    position: absolute; top: 1rem; right: 1rem;
     background: var(--gold); color: var(--dark);
-    font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 0.75rem;
-    padding: 0.2rem 0.6rem; border-radius: 2px;
+    font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 0.72rem;
+    padding: 0.15rem 0.55rem; border-radius: 2px;
+  }
+  .happy-hour { margin-top: 2rem; background: var(--chili); color: #fff; padding: 1.6rem 2rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: center; border-left: 4px solid var(--gold); }
+  .happy-hour .section-label { color: var(--gold-light); }
+  .happy-hour h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; }
+  .hh-line { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px dotted rgba(255,255,255,0.35); font-size: 0.92rem; }
+  .hh-line span:first-child { font-weight: 700; }
+  .hh-line span:last-child { font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; font-size: 1.05rem; color: var(--gold-light); text-align: right; }
+  .hh-line:last-child { border-bottom: none; }
+  .category-note { font-size: 0.8rem; color: #888; margin-bottom: 0.8rem; font-style: italic; line-height: 1.6; }
+  /* ── FEATURE BANNER (ribeye) ── */
+  .feature-banner { background: var(--dark); color: var(--cream); padding: 0; }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-top: 3rem; padding-bottom: 3rem; }
+  .feature-img { display: block; border: 1px solid rgba(212,160,23,0.35); }
+  .feature-img img { display: block; width: 100%; height: auto; }
+  .feature-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+  .feature-title em { color: var(--gold); font-style: italic; }
+  .feature-text p:not(.section-label) { color: var(--sand); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.98rem; }
+  .feature-text .btn-outline.dark { border-color: var(--gold); color: var(--gold); }
+  .feature-text .btn-outline.dark:hover { background: var(--gold); color: var(--dark); }
+  @media (max-width: 768px) {
+    .wk-head { display: none; }
+    .wk-row { grid-template-columns: 1fr; }
+    .wk-day { padding-bottom: 0.3rem; }
+    .wk-cell { border-left: none; padding: 0.5rem 1.2rem 0.8rem; }
+    .wk-cell:last-child { padding-bottom: 1.1rem; }
+    .wk-label { display: inline-block; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 0.75rem; color: var(--gold-light); margin-bottom: 0.15rem; }
+    .happy-hour { grid-template-columns: 1fr; padding: 1.3rem; }
+    .feature-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   }

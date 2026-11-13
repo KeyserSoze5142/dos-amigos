@@ -32,13 +32,13 @@ document.querySelectorAll('.hours-table tr').forEach(function (tr) {
 });
 
 // ── Today's special badge (home + specials) ──
-var dayCode = { Sunday: 'SUN', Monday: 'MON', Tuesday: 'TUE', Wednesday: 'WED', Thursday: 'THU', Friday: 'FRI', Saturday: 'FRI' }[todayName];
-document.querySelectorAll('.special-card[data-day="' + dayCode + '"]').forEach(function (card) {
-  card.classList.add('is-today');
-  var badge = document.createElement('div');
+var dayCode = { Sunday: 'SUN', Monday: 'MON', Tuesday: 'TUE', Wednesday: 'WED', Thursday: 'THU', Friday: 'FRI', Saturday: 'SAT' }[todayName];
+document.querySelectorAll('.wk-row[data-day="' + dayCode + '"]').forEach(function (row) {
+  row.classList.add('is-today');
+  var badge = document.createElement('span');
   badge.className = 'today-badge';
   badge.textContent = 'Today';
-  card.appendChild(badge);
+  row.querySelector('.wk-day').appendChild(badge);
 });
 
 // ── Mobile nav toggle ──
@@ -63,7 +63,7 @@ if ('IntersectionObserver' in window) {
       if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; observer.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.special-card, .review-card, .gallery-item, .menu-item, .faq-item').forEach(function (el) {
+  document.querySelectorAll('.wk-row, .review-card, .gallery-item, .menu-item, .faq-item').forEach(function (el) {
     el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;';
     observer.observe(el);
   });
